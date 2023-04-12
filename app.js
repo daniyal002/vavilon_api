@@ -13,7 +13,7 @@ const Orders = require("./Models/Orders.js");
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:4000", "http://90.156.210.4:4000"],
+    origin: ["http://localhost:4001", "http://90.156.210.4:4001"],
   })
 );
 
