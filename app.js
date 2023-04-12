@@ -13,7 +13,7 @@ const Orders = require("./Models/Orders.js");
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: ["http://localhost:4000", "http://90.156.210.4:4000"],
   })
 );
 
@@ -40,6 +40,6 @@ sequelize
     console.error("Error synchronizing models with database:", err)
   );
 
-const port = 5000;
+const port = 5001;
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
