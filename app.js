@@ -21,7 +21,7 @@ app.use(express.json());
 app.use("/", moviesRouter, sessionRouter, orderRouter);
 
 const sequelize = new Sequelize("cinema", "postgres", "daniyalou", {
-  host: "http://90.156.210.4",
+  host: "localhost",
   dialect: "postgres",
 });
 
