@@ -40,6 +40,6 @@ sequelize
     console.error("Error synchronizing models with database:", err)
   );
 
-const port = 5001;
+const port = 5000;
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
