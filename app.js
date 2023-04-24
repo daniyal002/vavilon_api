@@ -1,28 +1,28 @@
-const express = require("express");
-const { Sequelize } = require("sequelize");
-const cors = require("cors");
+const express = require('express');
+const { Sequelize } = require('sequelize');
+const cors = require('cors');
 
-const moviesRouter = require("./routes/movies.js");
-const sessionRouter = require("./routes/sessions.js");
-const orderRouter = require("./routes/orders.js");
+const moviesRouter = require('./routes/movies.js');
+const sessionRouter = require('./routes/sessions.js');
+const orderRouter = require('./routes/orders.js');
 
-const Movies = require("./Models/Movies.js");
-const Sessions = require("./Models/Sessions.js");
-const Orders = require("./Models/Orders.js");
+const Movies = require('./Models/Movies.js');
+const Sessions = require('./Models/Sessions.js');
+const Orders = require('./Models/Orders.js');
 
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:4001", "http://90.156.210.4:4001"],
+    origin: ['http://localhost:4001', 'http://90.156.210.4:4001'],
   })
 );
 
 app.use(express.json());
-app.use("/", moviesRouter, sessionRouter, orderRouter);
+app.use('/', moviesRouter, sessionRouter, orderRouter);
 
-const sequelize = new Sequelize("cinema", "postgres", "daniyalou", {
-  host: "localhost",
-  dialect: "postgres",
+const sequelize = new Sequelize('cinema', 'postgres', 'Daniyalou2002', {
+  host: 'localhost',
+  dialect: 'postgres',
 });
 
 // Отношения
@@ -35,9 +35,9 @@ Orders.belongsTo(Sessions);
 // Синхронизация моделей и базы данных
 sequelize
   .sync({ alter: true })
-  .then(() => console.log("Models synchronized with database."))
+  .then(() => console.log('Models synchronized with database.'))
   .catch((err) =>
-    console.error("Error synchronizing models with database:", err)
+    console.error('Error synchronizing models with database:', err)
   );
 
 const port = 5000;

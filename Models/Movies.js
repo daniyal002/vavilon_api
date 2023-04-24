@@ -1,11 +1,11 @@
-const { Sequelize } = require("sequelize");
-const sequelize = new Sequelize("cinema", "postgres", "daniyalou", {
-  host: "localhost",
-  dialect: "postgres",
+const { Sequelize } = require('sequelize');
+const sequelize = new Sequelize('cinema', 'postgres', 'Daniyalou2002', {
+  host: 'localhost',
+  dialect: 'postgres',
 });
 
 const Movies = sequelize.define(
-  "movies",
+  'movies',
   {
     title: {
       type: Sequelize.STRING,
@@ -24,6 +24,12 @@ const Movies = sequelize.define(
       type: Sequelize.INTEGER,
     },
     trailer_url: {
+      type: Sequelize.STRING,
+    },
+    year: {
+      type: Sequelize.STRING,
+    },
+    genre: {
       type: Sequelize.STRING,
     },
   },

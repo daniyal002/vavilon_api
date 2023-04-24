@@ -1,17 +1,17 @@
-const { Sequelize } = require("sequelize");
-const sequelize = new Sequelize("cinema", "postgres", "daniyalou", {
-  host: "localhost",
-  dialect: "postgres",
+const { Sequelize } = require('sequelize');
+const sequelize = new Sequelize('cinema', 'postgres', 'Daniyalou2002', {
+  host: 'localhost',
+  dialect: 'postgres',
 });
 
 const Sessions = sequelize.define(
-  "sessions",
+  'sessions',
   {
     movieId: {
       type: Sequelize.INTEGER,
       references: {
-        model: "movies",
-        key: "id",
+        model: 'movies',
+        key: 'id',
       },
     },
     time: {
