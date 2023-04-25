@@ -1,7 +1,8 @@
 const express = require('express');
 const { Sequelize } = require('sequelize');
 const cors = require('cors');
-const fs = require('fs');
+// const fs = require('fs');
+// const https = require('https');
 
 const moviesRouter = require('./routes/movies.js');
 const sessionRouter = require('./routes/sessions.js');
@@ -46,11 +47,17 @@ sequelize
   //   cert: fs.readFileSync('/etc/letsencrypt/live/kinovavilon.ru/cert.pem')
   // };
 
+  
+  
    
 const port = 5000;
 
 
  
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`);
-});
+// https.createServer(options,app).listen(port, () => {
+//   console.log(`Example app listening on port ${port}!`);
+// });
+
+app.listen(port, ()=>{
+  console.log(`Example app listening on port ${port}!`)
+})
